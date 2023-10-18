@@ -4,7 +4,7 @@ function Button({children,
 type="button",
 textColor ="text-white",
 bgColor = "bg-blue-600",
-className="",
+className="", 
 ...props
 }) {
   return (
