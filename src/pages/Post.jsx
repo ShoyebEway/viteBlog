@@ -34,7 +34,7 @@ export default function Post() {
     };
 
     return post ? (
-        <div className="py-8">
+        <div className="py-8 dark:text-white">
             <Container>
                 <div className="w-full flex justify-center mb-4 relative shadow rounded-xl p-2">
                     <img

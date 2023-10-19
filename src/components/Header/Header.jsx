@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import Logout from './Logout';
 import {Container, Logo} from '../index'
+import ThemeButton from '../ThemeButton';
 
 
 
@@ -37,7 +38,7 @@ function Header() {
   },
 ]
   return (
-    <header className='py-5 shadow bg-white text-slate-400 sticky top-0'>
+    <header className='py-5 shadow bg-white text-slate-400 sticky top-0 dark:bg-slate-800 dark:text-white'>
       <Container>
       <nav className='flex'>
         <div className='ml-4'>
@@ -64,6 +65,9 @@ function Header() {
             )
           }
         </ul>
+        <div className='mt-2 mr-3'>
+          <ThemeButton/>
+        </div>
       </nav>
       </Container>
     </header>
