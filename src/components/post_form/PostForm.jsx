@@ -4,6 +4,9 @@ import {Button,Input,Select,RTE} from '../index'
 import { useSelector } from 'react-redux'
 import service from '../../appwrite/config'
 import {useForm} from 'react-hook-form'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function PostForm({post}) {
@@ -28,7 +31,21 @@ function PostForm({post}) {
                 featureImage : file?file.$id: undefined
             })
             if(dbPost){
-                navigate(`/post/${dbPost.$id}`)
+                toast.success('🦄 Wow so easy!', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+                    setTimeout(() => {
+                        navigate(`/post/${dbPost.$id}`)   
+                    }, 5000);
+                 
+              
             }
         }else{
             const file = await service.fileUpload(data.image[0]);
@@ -40,10 +57,21 @@ function PostForm({post}) {
                     userId : userData.$id,
                 })
                 if(dbPost){
+                    toast.success('🦄 Wow so easy!', {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        });
                     navigate(`/post/${dbPost.$id}`)
                 }
             }
         }
+       
     }
 
     const slugTransform = useCallback((value)=>{
@@ -109,6 +137,7 @@ function PostForm({post}) {
                     {post ? "Update" : "Submit"}
                 </Button>
             </div>
+            <ToastContainer />
         </form>
 
   )

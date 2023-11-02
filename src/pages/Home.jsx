@@ -28,7 +28,7 @@ function Home() {
         }else{
           return (
             <div className='w-full py-3 min-h-[320px]'>
-              <Container>
+                <Container>
                
                   <div className='flex flex-wrap'>
                     
@@ -38,7 +38,7 @@ function Home() {
                           </div>
                       ))}
                   </div>
-              </Container>
+                </Container>
               </div>
           )
         }
